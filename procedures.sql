@@ -64,6 +64,29 @@ BEGIN
     end
 end
 
+CREATE PROCEDURE SP_ADD_ROLE_MEMBER @object VARCHAR(100), @roles VARCHAR(20)
+AS
+BEGIN
+    DECLARE @pos INT = CHARINDEX(',', @roles)
+    DECLARE @command NVARCHAR(500)
+
+    WHILE @pos > 0
+    BEGIN
+        SET @command = 'EXEC sp_addrolemember db_' + TRIM(SUBSTRING(@roles, 1, @pos)) + '''' + @object + ''';'
+        EXEC sp_executesql @command;
+
+        SET @roles = TRIM(SUBSTRING(@roles, @pos + 1, LEN(@roles)))
+
+        SET @pos = CHARINDEX(',', @roles)
+     end
+
+    IF LEN(@roles) > 0
+    BEGIN
+        SET @command = 'EXEC sp_addrolemember db_' + TRIM(@roles) + ', ''' + @object + ''';'
+        EXEC sp_executesql @command;
+    end
+end
+
 CREATE PROCEDURE SP_ADD_INDEX_IN @table VARCHAR(30), @columns VARCHAR(MAX), @type VARCHAR(12) = ''
 AS
 BEGIN

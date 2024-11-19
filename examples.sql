@@ -1,5 +1,11 @@
 DECLARE @uuid UNIQUEIDENTIFIER = NEWID()
-SELECT @uuid AS UUID, CHECKSUM(@uuid) as CHECKSUM;
+SELECT @uuid AS UUID, CHECKSUM(@uuid) as CHECKSUM
+
+
 
 INSERT INTO ACCOUNTS (USERNAME, PASSWORD, EMAIL) VALUES
 ( 'ola', '1234', 'ola@gmail.com')
+
+
+--Variable
+DECLARE @variable INT

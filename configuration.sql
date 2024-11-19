@@ -1,6 +1,5 @@
 --Vuelve la base de datos una base de datos contenida
 EXEC sp_configure 'contained database authentication', 1;
-
 --La reconfigura
 RECONFIGURE;
 
@@ -10,6 +9,7 @@ ALTER DATABASE TestShop SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 ALTER DATABASE TestShop SET CONTAINMENT = PARTIAL;
 --La vuelve multiusuarios
 ALTER DATABASE TestShop SET MULTI_USER;
+RECONFIGURE;
 
 --Muestra las opciones avanzadas
 EXEC sp_configure 'show advanced options', 1
