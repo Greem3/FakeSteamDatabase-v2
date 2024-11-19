@@ -14,3 +14,11 @@ AS
 BEGIN
     RETURN LTRIM(RTRIM(@text))
 end
+
+--Funcion que no se utilizo nunca XD
+CREATE FUNCTION RANDINT(@min INT, @max INT)
+RETURNS INT
+AS
+BEGIN
+    RETURN RAND() * (@max - @min) + @min
+end
