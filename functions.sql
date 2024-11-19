@@ -15,6 +15,8 @@ BEGIN
     RETURN LTRIM(RTRIM(@text))
 end
 
+CREATE FUNCTION TRIMA
+
 --Funcion que no se utilizo nunca XD
 CREATE FUNCTION RANDINT(@min INT, @max INT)
 RETURNS INT
