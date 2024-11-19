@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/functions.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/indexs.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/insert_permissions.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/migrations.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/procedures.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/roles.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/tables.sql" dialect="TSQL" />

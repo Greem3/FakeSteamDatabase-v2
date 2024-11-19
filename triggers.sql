@@ -19,8 +19,7 @@ BEGIN
     --Cuando se inserte una cuenta de tipo developer y tiene un nombre numerico, ejecutara el error
     IF EXISTS(SELECT * FROM inserted WHERE ACCOUNT_TYPE = 'D' AND TRY_CAST(ACCOUNT_NAME AS INT) IS NOT NULL)
     BEGIN
-        ROLLBACK;
-        RAISERROR ('Developers cannot have numerical names', 16, 1)
+        THROW 50001, 'Developers cannot have numerical names', 1;
     end
 end
 
